@@ -1,0 +1,49 @@
+// Hard reset
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin defineBall {
+    margin: 5px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    border: 1px solid black;
+}
+
+@mixin setBgColor($bgColor) {
+    background-color: $bgColor;
+}
+
+@mixin animateBall($duration: 1s) {
+    animation: moveBalls $duration linear infinite alternate;
+}
+
+.container {
+    div {
+        @include defineBall;
+    }
+
+    .ball1 {
+        @include setBgColor(red);
+        @include animateBall();
+    }
+    .ball2 {
+        @include setBgColor(blue);
+        @include animateBall(0.5s);
+    }
+    .ball3 {
+        @include setBgColor(yellow);
+        @include animateBall(0.75s);
+    }
+}
+
+@keyframes moveBalls {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(1000px);
+    }
+}

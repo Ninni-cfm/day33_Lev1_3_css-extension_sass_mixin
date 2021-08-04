@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container div {
+  margin: 5px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  border: 1px solid black;
+}
+.container .ball1 {
+  background-color: red;
+  animation: moveBalls 1s linear infinite alternate;
+}
+.container .ball2 {
+  background-color: blue;
+  animation: moveBalls 0.5s linear infinite alternate;
+}
+.container .ball3 {
+  background-color: yellow;
+  animation: moveBalls 0.75s linear infinite alternate;
+}
+
+@keyframes moveBalls {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(1000px);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
